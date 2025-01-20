@@ -1,0 +1,40 @@
+<div class="todo-list">
+  <ul>
+    <li *ngFor="let todo of todos" [ngClass]="todo.end_date.toString()| todo" class="todo-item" appTodo>
+      <div class="todo-content">
+        <!-- Titre de la tâche -->
+        <h5>{{ todo.name }}</h5>
+
+        <!-- Boutons d'action -->
+        <button class="btn" (click)="displayTodoDetail(todo)">
+          <fa-icon [icon]="faList"></fa-icon>
+        </button>
+        <button class="btn" (click)="openUpdateTodoModal(todo)">
+          <fa-icon [icon]="faPenToSquare"></fa-icon>
+        </button>
+        <button class="btn" (click)="deleteTodo(todo)">
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Affichage des détails du todo sélectionné -->
+<div *ngIf="showModal" class="modal-overlay">
+  <div class="modal-container">
+    <app-todo-detail [todo]="selectedTodo"></app-todo-detail>
+    <button class="close-modal" (click)="closeModal()">Close</button>
+  </div>
+</div>
+
+<div *ngIf="showUpdateModal" class="modal-overlay">
+  <div class="modal-container">
+  <app-todo-update
+  *ngIf="selectedTodo"
+    [todo]="selectedTodo"
+    (todoUpdated)="handleTodoUpdated($event)"
+    (closeModal)="closeUpdateModal()">
+  </app-todo-update>
+</div>
+</div>

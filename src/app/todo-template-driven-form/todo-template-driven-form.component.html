@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h5 class="modal-title">Ajouter un nouveau Todo</h5>
+  <!-- <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button> -->
+</div>
+<div class="modal-body">
+  <form #todoForm="ngForm" (ngSubmit)="addTodo()">
+    <div class="form-group">
+      <label for="name">Titre</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="todo.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" [(ngModel)]="todo.description" name="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="end_date">Date de fin</label>
+      <input type="date" class="form-control" id="end_date" [(ngModel)]="todo.end_date" name="end_date" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!todoForm.valid">Ajouter</button>
+  </form>
+</div>

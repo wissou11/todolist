@@ -1,0 +1,55 @@
+/* Style pour la barre de navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Aligne le titre à gauche et les boutons à droite */
+  align-items: center;
+  padding: 0.5rem 1rem; /* Un peu d'espacement autour */
+  background-color: rgb(223, 27, 112);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar .navbar-brand {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.navbar .ml-auto {
+  display: flex;
+  gap: 10px; /* Espacement entre les boutons */
+}
+
+.navbar .btn {
+  color: white;
+  border: none;
+  background-color: #343a40; /* Couleur de fond de la navbar */
+  transition: background-color 0.3s ease;
+}
+
+.navbar .btn:hover {
+  background-color: #495057; /* Changement de couleur au survol */
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 500px;
+}

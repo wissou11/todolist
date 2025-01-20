@@ -1,0 +1,88 @@
+/* Background overlay to darken the background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+/* Modal content container */
+.modal-content {
+  background-color: #ffffff; /* White background for the modal */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  width: 90%; /* Adjust for smaller screens */
+  max-width: 500px; /* Restrict to a reasonable size on larger screens */
+  padding: 20px; /* Inner spacing */
+  position: relative; /* Position for child elements */
+}
+
+/* Modal header styling */
+.modal-header {
+  display: flex;
+  justify-content: space-between; /* Space between title and close button */
+  align-items: center; /* Vertically align title and button */
+  border-bottom: 1px solid #e0e0e0; /* Subtle border below header */
+  margin-bottom: 20px; /* Space below header */
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Close button */
+.close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333; /* Dark gray for contrast */
+}
+
+/* Modal body styling */
+.modal-body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px; /* Space between form fields */
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Checkbox alignment */
+input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+/* Update button */
+.btn-primary {
+  background-color: #007bff; /* Bootstrap primary blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

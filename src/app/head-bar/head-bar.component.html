@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark">
+  <div class="container">
+    <!-- Titre aligné à gauche -->
+    <h1 class="navbar-brand">My Todo List</h1>
+
+    <!-- Conteneur pour les boutons alignés à droite -->
+    <div class="ml-auto">
+      <button class="btn btn-dark" (click)="redirectTo('/todos')">Todos</button>
+      <button *ngIf="!authService.isLoggedIn()" routerLink="/login" class="btn btn-primary">
+        Sign In
+      </button>
+      <button *ngIf="authService.isLoggedIn()" (click)="logout()" class="btn btn-danger">
+        Sign Out
+      </button>
+
+      <button class="btn btn-dark" (click)="showModal = true">New</button>
+    </div>
+  </div>
+</nav>
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <app-todo-template-driven-form (todoAdded)="closeModal()" [showModal]="showModal"></app-todo-template-driven-form> <!-- Passe l'état du modal -->
+  </div>
+</div>

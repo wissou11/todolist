@@ -1,0 +1,27 @@
+<div *ngIf="todo" class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Update Todo</h5>
+    <button type="button" class="close" (click)="cancelUpdate()">×</button>
+  </div>
+
+  <div class="modal-body">
+    <form (ngSubmit)="updateTodo()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="todo.name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="todo.description" name="description" required />
+      </div>
+
+      <div class="form-group">
+        <label for="done">Done</label>
+        <input type="checkbox" id="done" [(ngModel)]="todo.done" name="done" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+</div>
